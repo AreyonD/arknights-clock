@@ -139,7 +139,7 @@ function timeWatcher(app) {
 }
 
 function getData(app) {
-	axios.get("assets/json/wallpaper.json").then((response) => {
+	axios.get("../assets/json/wallpaper.json").then((response) => {
 		let result = updateWallpaper(response.data);
 		if (result != null) {
 			app.wallpaperPath = result.images;
