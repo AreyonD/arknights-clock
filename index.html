@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/assets/img/icon.ico"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<title>Arknights Clock</title>
+	</head>
+	<body>
+		<main class="root" id="root">
+			<transition name="fade">
+				<div v-if="completed">
+					<div class="clock">
+						<h1 id="time">
+							{{ time }}<span id="second">{{ second }}</span>
+						</h1>
+						<p id="date">{{ date }}</p>
+					</div>
+
+					<div class="logo">
+						<img
+							v-bind:src="logoURL"
+							id="logo-img"
+							v-bind:title="title"
+						/>
+					</div>
+
+					<div class="desc">
+						<h1 id="place-name-title">{{ title }}</h1>
+						<p id="place-desc">{{ desc }}</p>
+					</div>
+
+					<div class="toolbar">
+						<a
+							id="refresh-button"
+							onclick="location.reload()"
+							title="Refresh"
+							><i class="fas fa-sync"></i
+						></a>
+						<a id="info" title="info" href="#"
+							><i class="fas fa-info-circle"></i
+						></a>
+					</div>
+
+					<div
+						class="wallpaper"
+						id="wallpaper"
+						v-bind:style="{ background: `url(${wallpaperPath})` }"
+					></div>
+				</div>
+			</transition>
+
+			
+		</main>
+		<script src="assets/js/vue.js"></script>
+		<script src="assets/js/scripts.js"></script>
+	</body>
+</html>
