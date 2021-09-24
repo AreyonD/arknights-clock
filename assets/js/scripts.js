@@ -74,8 +74,8 @@ function updateWallpaper(response) {
 
 function randomResult(response, time) {
 	let responseIndex = Math.floor(Math.random() * response.length);
-	let wallpaperPath = "/assets/img/time/";
-	let logoPath = "/assets/img/logo/";
+	let wallpaperPath = "assets/img/time/";
+	let logoPath = "assets/img/logo/";
 	let imgResult = [];
 	let randomResult = null;
 
@@ -139,7 +139,7 @@ function timeWatcher(app) {
 }
 
 function getData(app) {
-	axios.get("/assets/json/wallpaper.json").then((response) => {
+	axios.get("assets/json/wallpaper.json").then((response) => {
 		let result = updateWallpaper(response.data);
 		if (result != null) {
 			app.wallpaperPath = result.images;
